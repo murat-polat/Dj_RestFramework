@@ -5,7 +5,7 @@ class NewUser(models.Model):
     username = models.CharField(max_length=30)
     email = models.EmailField(max_length=254)
     password = models.CharField(max_length=75)
-    terms_of_service = models.BooleanField()
+    terms_of_service = models.BooleanField(default=False, blank=True, null=True)
     
     def __str__(self):
         return(self.name, self.username,
