@@ -1,3 +1,4 @@
+from unittest import result
 from django.db import models
 
 class NewUser(models.Model):
@@ -8,6 +9,7 @@ class NewUser(models.Model):
     terms_of_service = models.BooleanField(default=False, blank=True, null=True)
     
     def __str__(self):
-        return(self.name, self.username,
-        self.email, self.password, self.terms_of_service)
+        result = '{0.name} {0.email} {0.username} {0.password} {0.terms_of_service} '
+        return result.format(self)
+        
 
